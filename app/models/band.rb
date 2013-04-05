@@ -3,4 +3,5 @@ class Band < ActiveRecord::Base
    has_many :albums, dependent: :destroy
    #has_many :artists
    has_many :tracks, :through => :albums, dependent: :destroy
+   has_many :artists, :through => :bands_artists
 end

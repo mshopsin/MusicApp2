@@ -9,10 +9,12 @@ class AlbumsController < ApplicationController
 
   def new
     @album = Album.new
+    @album.band_id = params[:band_id]
   end
 
   def create
     @album = Album.new(params[:album])
+
     @album.save
     redirect_to albums_path
   end

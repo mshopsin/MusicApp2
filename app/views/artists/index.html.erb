@@ -1,0 +1,16 @@
+<ul>
+<% @artists.each do |artist| %>
+ <li>
+   <%= link_to artist.name, edit_artist_path(artist) %> <%=link_to "delete", artist_path(artist), method: :delete, confirm: "Are you sure? come on #{artist.name}!" %>
+   <ul>
+   <% artist.bands.each do |band| %>
+    <li>
+       <%= band.name %>
+     </li>
+   <% end %>
+   </ul>
+ </li>
+ <% end %>
+</ul>
+
+<%= link_to "<<Add Artist>>", new_artist_path%>

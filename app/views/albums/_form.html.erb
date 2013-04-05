@@ -6,7 +6,8 @@
   <p>
     <% Band.all.each do |band| %>
       <%= f.label band.name %>
-      <%= f.radio_button :band_id, band.id %>
+      <%= f.radio_button :band_id, band.id,
+       :checked => (!@album.band_id.nil? && @album.band.id == band.id ) %>
     <% end %>
   </p>
   <p>
