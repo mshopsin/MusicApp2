@@ -1,0 +1,19 @@
+<%= form_for(@track) do |f| %>
+
+  <p>
+    <% Album.all.each do |album| %>
+      <%= f.label album.name %>
+      <%= f.radio_button :album_id, album.id %>
+    <% end %>
+  </p>
+
+  <p>
+    <% Song.all.each do |song| %>
+      <%= f.label song.name %>
+      <%= f.radio_button :song_id, song.id %>
+    <% end %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

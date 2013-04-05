@@ -1,0 +1,15 @@
+<ul>
+<% @albums.each do |album| %>
+ <li>
+    <%= album.name %>
+
+
+  <% album.tracks.each do |track| %>
+    <%= ">>#{track.song.name}"%><br>
+  <% end %>
+
+</li>
+<% end %>
+</ul>
+
+<%= link_to "<<Add Album>>", new_album_path %>

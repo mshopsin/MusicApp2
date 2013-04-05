@@ -1,0 +1,15 @@
+<%= form_for(@album) do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <% Band.all.each do |band| %>
+      <%= f.label band.name %>
+      <%= f.radio_button :band_id, band.id %>
+    <% end %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

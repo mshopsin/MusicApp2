@@ -1,0 +1,10 @@
+<h1>The best band ever</h1>
+<%= @band.name%><br>
+<ul>
+<% @band.albums.each do |album| %>
+ <li>
+    <%= album.name %>
+  </li>
+<% end %>
+</ul>
+<%= link_to "Complete List of Bands", bands_path%>
